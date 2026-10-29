@@ -1,0 +1,22 @@
+# Сторонние компоненты (BepInEx, XUnity.AutoTranslator, библиотеки Unity, шрифты-кандидаты)
+downloads/
+
+# Сборка и её описание: хранятся только локально
+DEVELOPMENT.md
+tools/
+plugin/bin/
+plugin/obj/
+out/
+dist/
+*.xlsx
+
+# Извлечено из файлов игры (оригинальный текст не публикуем)
+work/en.tsv
+work/loc_English*.xml
+work/hard.txt
+work/check.txt
+work/font_*.ttf
+work/*.png
+work/assets_strings.json
+installer/bin/
+installer/obj/

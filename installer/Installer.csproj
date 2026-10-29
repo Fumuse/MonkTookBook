@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>MonkTookBook_Translate_Setup</AssemblyName>
+    <RootNamespace>MonkTookBookTranslate.Setup</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Version>1.5</Version>
+    <!-- Архив русификатора, который вшивается в exe (собирает tools/package.py) -->
+    <Payload>..\dist\MonkTookBook_Translate.zip</Payload>
+    <Fonts>..\package\BepInEx\plugins\MonkTookBookTranslate\fonts</Fonts>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <EmbeddedResource Include="$(Payload)" LogicalName="payload.zip" />
+    <EmbeddedResource Include="$(Fonts)\Alegreya.ttf" LogicalName="Alegreya.ttf" />
+    <EmbeddedResource Include="$(Fonts)\Kurale-Regular.ttf" LogicalName="Kurale-Regular.ttf" />
+  </ItemGroup>
+</Project>

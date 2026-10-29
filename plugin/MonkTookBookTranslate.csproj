@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>MonkTookBookTranslate</AssemblyName>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <!-- Копия BepInEx\core и BepInEx\interop из папки игры (появляются после первого запуска с BepInEx) -->
+    <RefsDir>$(MSBuildThisFileDirectory)..\downloads\refs</RefsDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(RefsDir)\core\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(RefsDir)\core\BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(RefsDir)\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(RefsDir)\core\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\Il2Cppmscorlib.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\UnityEngine.TextCoreFontEngineModule.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\Il2CppSystem.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\Unity.InputSystem.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(RefsDir)\interop\UnityEngine.TextRenderingModule.dll" Private="false" />
+  </ItemGroup>
+</Project>
