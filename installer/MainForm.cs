@@ -55,7 +55,7 @@ namespace MonkTookBookTranslate.Setup
             browse = new GameButton { Text = Ui.Browse, Fill = Theme.ParchmentLight, Hover = Color.White, Font = Theme.Body(11), Bounds = R(448, 39, 86, 30) };
             var langLabel = new TextLabel { Text = Ui.GameLanguage, Font = Theme.Body(10.5f, FontStyle.Bold), ForeColor = Theme.InkMuted, Bounds = R(20, 88, 110, 22) };
             // Названия языков — каждое на своём языке, как принято в переключателях
-            var names = new[] { "Русский", "English" };
+            var names = new[] { "Русский", "Deutsch", "English" };
             langButtons = new GameButton[Game.Languages.Length];
             for (var i = 0; i < langButtons.Length; i++)
                 langButtons[i] = new GameButton { Text = names[i], Font = Theme.Body(11), Bounds = R(130 + i * 110, 82, 102, 32) };

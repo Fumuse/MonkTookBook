@@ -8,12 +8,12 @@ using HarmonyLib;
 
 namespace MonkTookBookTranslate
 {
-    [BepInPlugin("monktookbook.translate", "Monk Took Book — Translate", "1.0.0")]
+    [BepInPlugin("monktookbook.translate", "Monk Took Book — Translate", "1.1.0")]
     public class Plugin : BasePlugin
     {
         // Файл с кодом языка пишет установщик; английский — это выключенный загрузчик, плагин тогда не грузится
         const string LanguageFile = "MonkTookBook_Translate.language";
-        static readonly Dictionary<string, string> Files = new() { ["ru"] = "Russian.xml" };
+        static readonly Dictionary<string, string> Files = new() { ["ru"] = "Russian.xml", ["de"] = "German.xml" };
 
         internal static Dictionary<string, string> Strings = new();
         internal static ManualLogSource L;

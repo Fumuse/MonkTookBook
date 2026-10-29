@@ -4,7 +4,7 @@ using TMPro;
 
 namespace MonkTookBookTranslate
 {
-    // Русский текст длиннее английского, а рамки у игры фиксированные.
+    // Русский и немецкий текст длиннее английского, а рамки у игры фиксированные.
     // Однословные надписи («Управление», «Настройки») переносились посреди слова,
     // а длинные тексты в рамках вылезали за края — даём шрифту ужаться.
     static class Fit
@@ -23,8 +23,8 @@ namespace MonkTookBookTranslate
             if (text == null || text.enableAutoSizing) return;
             var visible = Tags.Replace(text.text ?? "", "").Trim();
             if (visible.Length == 0) return;
-            // Английские надписи (непереведённые) не трогаем
-            if (!Cyrillic.IsMatch(visible)) return;
+            // В русской версии английские надписи (непереведённые) не трогаем; немецкие по письму не отличить
+            if (Plugin.Language == "ru" && !Cyrillic.IsMatch(visible)) return;
 
             if (key == null || !Boxed.Contains(key))
             {

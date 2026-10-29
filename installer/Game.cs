@@ -99,9 +99,10 @@ namespace MonkTookBookTranslate.Setup
         // Язык перевода для плагина и XUnity.AutoTranslator; английский = выключенный загрузчик
         const string LanguageFile = @"BepInEx\config\MonkTookBook_Translate.language";
         const string XuaConfig = @"BepInEx\config\AutoTranslatorConfig.ini";
-        public static readonly string[] Languages = { "ru", "en" };
+        public static readonly string[] Languages = { "ru", "de", "en" };
 
-        const string DefaultLanguage = "ru";
+        // Для первой установки: немецкая Windows — немецкий, иначе русский
+        static string DefaultLanguage => Ui.Lang == "de" ? "de" : "ru";
 
         public static string GetLanguage(string dir)
         {
@@ -115,7 +116,7 @@ namespace MonkTookBookTranslate.Setup
             {
                 var path = Path.Combine(dir, LanguageFile);
                 var code = File.Exists(path) ? File.ReadAllText(path).Trim() : "";
-                if (code == "ru") return code;
+                if (code == "ru" || code == "de") return code;
             }
             catch { }
             return DefaultLanguage;
